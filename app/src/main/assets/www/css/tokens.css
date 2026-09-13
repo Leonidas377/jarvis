@@ -1,0 +1,357 @@
+/* ==========================================================================
+   JARVIS Synthetic Quantum HUD - Design System Tokens
+   Adheres strictly to synthetic_quantum_hud/DESIGN.md
+   ========================================================================== */
+
+:root {
+  /* Color Palette: Void Ground & Photonic Luminescence */
+  --bg-void: #04080F;
+  --surface-dim: #08121E;
+  --surface-panel: rgba(8, 18, 30, 0.75);
+  --surface-card: rgba(10, 26, 44, 0.85);
+  --surface-high: rgba(18, 36, 60, 0.9);
+  --surface-input: rgba(4, 10, 20, 0.95);
+
+  /* Accents */
+  --cyan-core: #00F0FF;
+  --cyan-glow: rgba(0, 240, 255, 0.45);
+  --cyan-dim: rgba(0, 240, 255, 0.15);
+  --cyan-ghost: rgba(0, 240, 255, 0.05);
+  --ice-flare: #A6EFFF;
+  --plasma-blue: #0072FF;
+  --plasma-cobalt: #548DFF;
+  
+  /* Status Colors */
+  --warning-amber: #FFB800;
+  --warning-dim: rgba(255, 184, 0, 0.15);
+  --alert-red: #FF2A55;
+  --alert-dim: rgba(255, 42, 85, 0.15);
+  --success-green: #00FFB2;
+  --success-dim: rgba(0, 255, 178, 0.15);
+
+  /* Typography */
+  --text-primary: #F0F6FC;
+  --text-secondary: #8BA9B8;
+  --text-muted: #536E7E;
+  --font-display: 'Space Grotesk', -apple-system, sans-serif;
+  --font-telemetry: 'JetBrains Mono', monospace;
+
+  /* Borders & Glows */
+  --border-cyan: 1px solid rgba(0, 240, 255, 0.22);
+  --border-cyan-bright: 1px solid #00F0FF;
+  --border-blue: 1px solid rgba(0, 114, 255, 0.25);
+  --border-amber: 1px solid rgba(255, 184, 0, 0.4);
+  --border-alert: 1px solid rgba(255, 42, 85, 0.45);
+  
+  --glow-cyan-sm: 0 0 8px rgba(0, 240, 255, 0.35);
+  --glow-cyan-md: 0 0 16px rgba(0, 240, 255, 0.45), inset 0 0 12px rgba(0, 240, 255, 0.08);
+  --glow-cyan-lg: 0 0 28px rgba(0, 240, 255, 0.65), inset 0 0 18px rgba(0, 240, 255, 0.12);
+
+  /* Chamfered Corners */
+  --chamfer-clip-sm: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+  --chamfer-clip-md: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  --chamfer-clip-lg: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+
+  /* Layout Spacing */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --header-height: 56px;
+  --nav-height: 68px;
+}
+
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bg-void);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: 14px;
+  line-height: 1.4;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HUD Background Grid & Scanline Atmosphere */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(0, 240, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.025) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 240, 255, 0.015) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.6;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 3;
+}
+
+/* Scroll Container */
+.hud-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.hud-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Typography Utility Classes */
+.font-telemetry {
+  font-family: var(--font-telemetry);
+  letter-spacing: 0.04em;
+}
+
+.label-caps {
+  font-family: var(--font-telemetry);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.hud-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+/* HUD Panel Containers */
+.hud-panel {
+  position: relative;
+  background: var(--surface-panel);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: var(--border-cyan);
+  clip-path: var(--chamfer-clip-md);
+  padding: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hud-panel:active {
+  border-color: var(--cyan-core);
+  box-shadow: var(--glow-cyan-sm);
+}
+
+/* Corner L-Brackets Decoration */
+.hud-bracket {
+  position: relative;
+}
+.hud-bracket::before,
+.hud-bracket::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-color: var(--cyan-core);
+  pointer-events: none;
+}
+.hud-bracket::before {
+  top: 0;
+  left: 0;
+  border-top: 1.5px solid var(--cyan-core);
+  border-left: 1.5px solid var(--cyan-core);
+}
+.hud-bracket::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 1.5px solid var(--cyan-core);
+  border-right: 1.5px solid var(--cyan-core);
+}
+
+/* Buttons & Triggers */
+.hud-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--cyan-dim);
+  border: 1px solid var(--cyan-core);
+  color: var(--cyan-core);
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 10px 16px;
+  clip-path: var(--chamfer-clip-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.hud-btn:active {
+  background: var(--cyan-core);
+  color: var(--bg-void);
+  box-shadow: var(--glow-cyan-md);
+  transform: scale(0.98);
+}
+
+.hud-btn-ghost {
+  background: rgba(8, 18, 30, 0.6);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  color: var(--text-secondary);
+}
+.hud-btn-ghost:active {
+  border-color: var(--cyan-core);
+  color: var(--cyan-core);
+  background: var(--cyan-dim);
+}
+
+.hud-btn-danger {
+  background: var(--alert-dim);
+  border: 1px solid var(--alert-red);
+  color: var(--alert-red);
+}
+.hud-btn-danger:active {
+  background: var(--alert-red);
+  color: var(--text-primary);
+}
+
+/* Form Inputs */
+.hud-input {
+  width: 100%;
+  background: var(--surface-input);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: 14px;
+  padding: 10px 12px;
+  clip-path: var(--chamfer-clip-sm);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.hud-input:focus {
+  border-color: var(--cyan-core);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+/* Status Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-telemetry);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border-radius: 2px;
+}
+.badge-cyan {
+  background: rgba(0, 240, 255, 0.12);
+  color: var(--cyan-core);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+}
+.badge-amber {
+  background: rgba(255, 184, 0, 0.12);
+  color: var(--warning-amber);
+  border: 1px solid rgba(255, 184, 0, 0.35);
+}
+.badge-red {
+  background: rgba(255, 42, 85, 0.12);
+  color: var(--alert-red);
+  border: 1px solid rgba(255, 42, 85, 0.35);
+}
+.badge-green {
+  background: rgba(0, 255, 178, 0.12);
+  color: var(--success-green);
+  border: 1px solid rgba(0, 255, 178, 0.35);
+}
+
+/* Keyframe Animations */
+@keyframes spin-cw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-ccw {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); filter: drop-shadow(0 0 12px var(--cyan-core)); }
+}
+
+.animate-spin-cw {
+  animation: spin-cw 20s linear infinite;
+}
+.animate-spin-ccw {
+  animation: spin-ccw 14s linear infinite;
+}
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Modal Overlay */
+.hud-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 8, 15, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.hud-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hud-modal-content {
+  width: 100%;
+  max-width: 500px;
+  max-height: 85vh;
+  background: var(--surface-dim);
+  border-top: 1.5px solid var(--cyan-core);
+  box-shadow: 0 -8px 32px rgba(0, 240, 255, 0.25);
+  clip-path: polygon(0 14px, 14px 0, 100% 0, 100% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  transform: translateY(100%);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hud-modal-overlay.active .hud-modal-content {
+  transform: translateY(0);
+}

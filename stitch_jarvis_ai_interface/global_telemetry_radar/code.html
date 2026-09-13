@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#0e141b;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary-fixed":"#7df4ff","on-secondary":"#002d6d","inverse-on-surface":"#2b3139","surface-dim":"#0e141b","inverse-surface":"#dee2ed","surface-bright":"#343942","surface-container":"#1b2028","on-secondary-container":"#002760","on-error":"#690005","outline-variant":"#3b494b","surface-tint":"#00dbe9","surface-container-high":"#252a32","tertiary-container":"#ffd386","on-primary-fixed":"#002022","primary-fixed-dim":"#00dbe9","on-background":"#dee2ed","on-primary-fixed-variant":"#004f54","on-surface-variant":"#b9cacb","on-secondary-fixed":"#001944","on-error-container":"#ffdad6","secondary-fixed-dim":"#afc6ff","on-tertiary":"#412d00","outline":"#849495","tertiary-fixed-dim":"#ffba20","tertiary-fixed":"#ffdea8","surface-container-lowest":"#090e16","on-surface":"#dee2ed","on-tertiary-fixed":"#271900","surface-container-low":"#171c24","error":"#ffb4ab","secondary":"#afc6ff","on-primary-container":"#006970","on-tertiary-container":"#7d5800","surface":"#0e141b","background":"#0e141b","primary-container":"#00f0ff","secondary-container":"#548dff","on-tertiary-fixed-variant":"#5e4200","primary":"#dbfcff","surface-container-highest":"#30353d","on-secondary-fixed-variant":"#00429a","on-primary":"#00363a","secondary-fixed":"#d9e2ff","surface-variant":"#30353d","inverse-primary":"#006970","error-container":"#93000a","tertiary":"#fff4e8"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-2xl":"2rem","space-xxs":"0.125rem","space-md":"0.75rem","space-3xl":"3rem","space-lg":"1.25rem","margin-mobile":"1rem","space-base":"1rem","gutter-mobile":"0.75rem","panel-padding":"1rem","space-xs":"0.25rem","space-sm":"0.5rem","space-xl":"1.5rem"},"fontFamily":{"body-sm":["Space Grotesk"],"telemetry-lg":["JetBrains Mono"],"headline-sm":["Space Grotesk"],"telemetry-md":["JetBrains Mono"],"body-md":["Space Grotesk"],"headline-lg":["Space Grotesk"],"label-caps":["JetBrains Mono"],"headline-md":["Space Grotesk"],"body-lg":["Space Grotesk"],"display-lg-mobile":["Space Grotesk"],"display-lg":["Space Grotesk"],"telemetry-sm":["JetBrains Mono"]},"fontSize":{"body-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"400"}],"telemetry-lg":["20px",{"lineHeight":"24px","letterSpacing":"0.05em","fontWeight":"700"}],"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"0.01em","fontWeight":"500"}],"telemetry-md":["14px",{"lineHeight":"18px","letterSpacing":"0.08em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"400"}],"headline-lg":["28px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-caps":["10px",{"lineHeight":"12px","letterSpacing":"0.2em","fontWeight":"600"}],"headline-md":["22px",{"lineHeight":"28px","letterSpacing":"0em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"400"}],"display-lg-mobile":["32px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"700"}],"display-lg":["48px",{"lineHeight":"52px","letterSpacing":"-0.03em","fontWeight":"700"}],"telemetry-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.12em","fontWeight":"500"}]}}}};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-fixed"><header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl pt-safe shadow-[0_1px_16px_rgba(0,240,255,0.06)]"><div class="h-20 px-space-base flex flex-col justify-center"><div class="flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="Stark Arc Reactor Emblem" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1VSsodAoEY9cX8c4ArfsYCvIYIfVeTBhy-zvzVdTZc2RuTH1cIJ4GydqeQjldtk5CkRba6ffQA9tpEZ2FdkuMOyIgyVrJbr0HP_lUUtZp2VQj7HmDTfc9oFkDn8f0S1WWb1Uj8Yw0zEuRWxg3bWIRgUYVP8viFtw2fwl8ul9mCxUGQyYZHDUELRFtSZwa_6Gan7wPALmrcpeGmm4QQ-aaHN4_8E3VTWDkasj8ed5QcleYcAhPk4xYtIWdqA"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="text-primary-container font-headline-sm text-headline-sm uppercase tracking-wider truncate">J.A.R.V.I.S.</span><span class="px-space-xs py-0.5 rounded bg-surface-container text-primary text-telemetry-sm font-telemetry-sm uppercase">OS 14.8</span></div><span class="text-on-surface-variant font-label-caps text-label-caps uppercase truncate">Telemetry</span></div></div><div class="flex items-center gap-space-md shrink-0"><div class="hidden xs:flex flex-col items-end"><span class="text-primary font-telemetry-sm text-telemetry-sm font-semibold tracking-wider">ARC CORE: 3.8 GJ/s</span><div class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span><span class="text-on-surface-variant font-label-caps text-label-caps tracking-widest uppercase">MK LXXXV LINK</span></div></div><div class="flex items-end gap-0.5 h-6 px-space-xs py-1 rounded bg-surface-container-low"><div class="w-0.5 bg-primary-container animate-pulse h-3"></div><div class="w-0.5 bg-primary-container animate-pulse h-5"></div><div class="w-0.5 bg-primary-container animate-pulse h-2"></div><div class="w-0.5 bg-primary-container animate-pulse h-4"></div><div class="w-0.5 bg-primary-container animate-pulse h-1"></div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="flex-1 flex flex-col relative w-full px-space-base pt-20 pb-24 bg-surface"><div class="flex flex-col w-full gap-space-lg select-none">
+<!-- HUD Tactical Status Bar -->
+<div class="flex items-center justify-between px-space-base py-space-sm bg-surface-container-low rounded-lg shadow-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+<div class="flex flex-col">
+<span class="text-primary-container font-label-caps text-label-caps uppercase tracking-widest">GRID LINK: STARK-SAT-04</span>
+<span class="text-on-surface-variant font-telemetry-sm text-telemetry-sm">LAT: 51.4826° N // LON: 0.0077° W</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-1 rounded">
+<span class="material-symbols-outlined text-primary-container text-[14px]">satellite_alt</span>
+<span class="text-primary font-telemetry-sm text-telemetry-sm tracking-wider uppercase font-semibold">VERONICA // SYNC</span>
+</div>
+</div>
+<!-- Holographic Orbital Radar Scope Module -->
+<div class="relative w-full rounded-xl bg-surface-container-low shadow-xl overflow-hidden p-space-base flex flex-col items-center justify-center min-h-[340px]">
+<!-- Background Sci-Fi Matrix Grid -->
+<div class="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-primary/5 pointer-events-none"></div>
+<!-- HUD Corner Notches -->
+<div class="absolute top-2 left-2 w-3 h-3 bg-primary-container/20 rounded-tl-sm pointer-events-none"></div>
+<div class="absolute top-2 right-2 w-3 h-3 bg-primary-container/20 rounded-tr-sm pointer-events-none"></div>
+<div class="absolute bottom-2 left-2 w-3 h-3 bg-primary-container/20 rounded-bl-sm pointer-events-none"></div>
+<div class="absolute bottom-2 right-2 w-3 h-3 bg-primary-container/20 rounded-br-sm pointer-events-none"></div>
+<!-- Monospaced Overlay Calibration Telemetry -->
+<div class="absolute top-3 left-3 flex flex-col pointer-events-none">
+<span class="text-primary-container font-label-caps text-label-caps">FOV: 140° ORBITAL</span>
+<span class="text-on-surface-variant font-telemetry-sm text-telemetry-sm">SWEEP: 4.88 GHZ</span>
+</div>
+<div class="absolute top-3 right-3 flex flex-col items-end pointer-events-none">
+<span class="text-error font-label-caps text-label-caps flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span> THREAT LVL 2
+      </span>
+<span class="text-on-surface-variant font-telemetry-sm text-telemetry-sm">RESONANCE: 94.2%</span>
+</div>
+<!-- Circular Radar & Orbital Visualization -->
+<div class="relative w-64 h-64 flex items-center justify-center my-2">
+<!-- Outer Concentric Scalar Ring -->
+<svg class="absolute inset-0 w-full h-full text-outline-variant/30" viewbox="0 0 260 260">
+<circle cx="130" cy="130" fill="none" r="126" stroke="currentColor" stroke-dasharray="4 6" stroke-width="1"></circle>
+<circle cx="130" cy="130" fill="none" r="95" stroke="currentColor" stroke-dasharray="1 5" stroke-width="1"></circle>
+<circle cx="130" cy="130" fill="none" r="62" stroke="currentColor" stroke-width="1"></circle>
+<circle cx="130" cy="130" fill="none" r="28" stroke="currentColor" stroke-dasharray="2 3" stroke-width="1"></circle>
+<line stroke="currentColor" stroke-opacity="0.4" stroke-width="0.75" x1="130" x2="130" y1="4" y2="256"></line>
+<line stroke="currentColor" stroke-opacity="0.4" stroke-width="0.75" x1="4" x2="256" y1="130" y2="130"></line>
+</svg>
+<!-- Active Holographic Sweep Cone -->
+<div class="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,transparent_0deg,transparent_280deg,rgba(0,240,255,0.22)_360deg)] animate-spin" id="radarSweep" style="animation-duration: 4s; animation-timing-function: linear;"></div>
+<!-- Orbital Platform Satellite Beacon (Veronica) -->
+<div class="absolute -top-1 right-12 flex items-center gap-1 bg-surface-container-highest/90 px-1.5 py-0.5 rounded shadow-sm cursor-pointer" onclick="inspectOrbital('Veronica')">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-ping"></span>
+<span class="text-primary font-label-caps text-label-caps">VERONICA-01</span>
+</div>
+<!-- Target Alpha Vector: Atlantic Supersonic -->
+<div class="absolute top-16 left-10 flex flex-col items-center cursor-pointer group" onclick="highlightThreat('Alpha')">
+<div class="relative flex items-center justify-center">
+<span class="w-4 h-4 rounded-full bg-error/30 animate-ping absolute"></span>
+<span class="w-2 h-2 rounded-full bg-error"></span>
+</div>
+<div class="mt-1 px-1 py-0.5 rounded bg-surface-container-highest/95 text-error font-telemetry-sm text-telemetry-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px]">flight</span> M4.2
+        </div>
+</div>
+<!-- Target Beta Anomaly: Sokovia Seismic -->
+<div class="absolute bottom-14 right-10 flex flex-col items-center cursor-pointer group" onclick="highlightThreat('Beta')">
+<div class="relative flex items-center justify-center">
+<span class="w-3.5 h-3.5 rounded-full bg-tertiary-fixed-dim/40 animate-ping absolute"></span>
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+</div>
+<div class="mt-1 px-1 py-0.5 rounded bg-surface-container-highest/95 text-tertiary-container font-telemetry-sm text-telemetry-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px]">warning</span> SEIS
+        </div>
+</div>
+<!-- Target Gamma: Stark Tower Apex -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center pointer-events-none">
+<div class="w-3 h-3 rounded-full bg-primary-container/40 flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+</div>
+<span class="text-primary-container font-label-caps text-label-caps tracking-wider mt-1">GRID HUB</span>
+</div>
+</div>
+<!-- Live Telemetry Coordinates Footer Badge -->
+<div class="w-full flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-telemetry-sm text-telemetry-sm">
+<span class="material-symbols-outlined text-primary-container text-[14px]">sensors</span>
+<span id="coordTrack">GEO SCAN ACTIVE [REFRESH 0.2s]</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-primary-container font-label-caps text-label-caps">SECTOR 07-E</span>
+</div>
+</div>
+<!-- Atmospheric & Planetary Telemetry Grid -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">Atmospheric &amp; Planetary Sensor Array</span>
+<span class="text-primary font-telemetry-sm text-telemetry-sm font-semibold">STARK MK-85 SENSORS</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Atmospheric Metric 1 -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-1 shadow-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">Wind Shear / Trajectory</span>
+<span class="material-symbols-outlined text-[16px] text-primary-container">air</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-primary font-telemetry-lg text-telemetry-lg font-bold">142</span>
+<span class="text-on-surface-variant font-telemetry-sm text-telemetry-sm">KTS // 310° NW</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden mt-1">
+<div class="w-3/4 h-full bg-primary-container rounded-full"></div>
+</div>
+</div>
+<!-- Atmospheric Metric 2 -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-1 shadow-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">Barometric Pressure</span>
+<span class="material-symbols-outlined text-[16px] text-primary-container">speed</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-primary font-telemetry-lg text-telemetry-lg font-bold">1,013.8</span>
+<span class="text-on-surface-variant font-telemetry-sm text-telemetry-sm">hPa</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden mt-1">
+<div class="w-1/2 h-full bg-secondary-container rounded-full"></div>
+</div>
+</div>
+<!-- Atmospheric Metric 3 -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-1 shadow-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">Geomagnetic Flux</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary-container">cyclone</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-tertiary-container font-telemetry-lg text-telemetry-lg font-bold">4.2</span>
+<span class="text-on-surface-variant font-telemetry-sm text-telemetry-sm">Kp INDEX</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden mt-1">
+<div class="w-2/5 h-full bg-tertiary-container rounded-full"></div>
+</div>
+</div>
+<!-- Atmospheric Metric 4 -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-1 shadow-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">Ceiling Radar</span>
+<span class="material-symbols-outlined text-[16px] text-primary-container">cloud</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-primary font-telemetry-lg text-telemetry-lg font-bold">85,000</span>
+<span class="text-on-surface-variant font-telemetry-sm text-telemetry-sm">FT MSL</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden mt-1">
+<div class="w-5/6 h-full bg-primary-container rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Threat Detection List -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[18px]">crisis_alert</span>
+<span class="text-on-surface font-headline-sm text-headline-sm">Tactical Threat Feed</span>
+</div>
+<span class="px-space-sm py-0.5 rounded bg-error/20 text-error font-telemetry-sm text-telemetry-sm font-semibold uppercase">3 Active Nodes</span>
+</div>
+<!-- Threat Card 1: Target Alpha -->
+<div class="bg-surface-container-low rounded-xl p-space-base flex flex-col gap-space-sm shadow-md transition-all" id="cardAlpha">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">rocket_launch</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="text-primary font-headline-sm text-headline-sm font-semibold">TARGET ALPHA</span>
+<span class="px-1.5 py-0.2 rounded bg-error/20 text-error font-label-caps text-label-caps">PRIORITY 1</span>
+</div>
+<span class="text-on-surface-variant font-telemetry-sm text-telemetry-sm">Unidentified Supersonic Trajectory</span>
+</div>
+</div>
+<span class="px-space-sm py-1 rounded bg-error text-on-error font-telemetry-sm text-telemetry-sm font-bold animate-pulse">TRACKING</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs py-space-xs bg-surface-container-lowest/60 rounded px-space-sm">
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-caps text-label-caps uppercase">Velocity</span>
+<span class="text-primary font-telemetry-sm text-telemetry-sm font-bold">Mach 4.2</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-caps text-label-caps uppercase">Sector</span>
+<span class="text-primary font-telemetry-sm text-telemetry-sm">N. Atlantic</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-caps text-label-caps uppercase">Interception</span>
+<span class="text-error font-telemetry-sm text-telemetry-sm font-bold">T-04:12</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="text-on-surface-variant font-telemetry-sm text-telemetry-sm">ID: SIG-8842-HYPER</span>
+<button class="px-space-md py-1.5 rounded bg-primary-container text-on-primary-fixed font-headline-sm text-body-sm font-semibold flex items-center gap-1 hover:opacity-90 active:scale-95 transition-all" onclick="engageTarget('Alpha')">
+<span class="material-symbols-outlined text-[16px]">radar</span>
+<span>LOCK VECTOR</span>
+</button>
+</div>
+</div>
+<!-- Threat Card 2: Target Beta -->
+<div class="bg-surface-container-low rounded-xl p-space-base flex flex-col gap-space-sm shadow-md transition-all" id="cardBeta">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-tertiary-container/20 text-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">tsunami</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="text-primary font-headline-sm text-headline-sm font-semibold">TARGET BETA</span>
+<span class="px-1.5 py-0.2 rounded bg-tertiary-container/20 text-tertiary-container font-label-caps text-label-caps">SEISMIC</span>
+</div>
+<span class="text-on-surface-variant font-telemetry-sm text-telemetry-sm">Anomalous Sub-Crustal Energy</span>
+</div>
+</div>
+<span class="px-space-sm py-1 rounded bg-tertiary-container text-on-tertiary-container font-telemetry-sm text-telemetry-sm font-bold">MONITORING</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs py-space-xs bg-surface-container-lowest/60 rounded px-space-sm">
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-caps text-label-caps uppercase">Geo-Coordinates</span>
+<span class="text-primary font-telemetry-sm text-telemetry-sm">45.1667° N, 19.8333° E</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-caps text-label-caps uppercase">Sub-Surface Depth</span>
+<span class="text-primary font-telemetry-sm text-telemetry-sm font-bold">-14.2 KM</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="text-on-surface-variant font-telemetry-sm text-telemetry-sm">LOC: Sokovia Outskirts</span>
+<button class="px-space-md py-1.5 rounded bg-surface-container-highest text-primary font-headline-sm text-body-sm font-semibold flex items-center gap-1 hover:opacity-90 active:scale-95 transition-all" onclick="engageTarget('Beta')">
+<span class="material-symbols-outlined text-[16px]">filter_center_focus</span>
+<span>SONIC PROBE</span>
+</button>
+</div>
+</div>
+<!-- Threat Card 3: Target Gamma -->
+<div class="bg-surface-container-low rounded-xl p-space-base flex flex-col gap-space-sm shadow-md" id="cardGamma">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="text-primary font-headline-sm text-headline-sm font-semibold">TARGET GAMMA</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container text-primary-container font-label-caps text-label-caps">INTERNAL</span>
+</div>
+<span class="text-on-surface-variant font-telemetry-sm text-telemetry-sm">Stark Tower Perimeter &amp; Reactor Hub</span>
+</div>
+</div>
+<span class="px-space-sm py-1 rounded bg-surface-container text-primary font-telemetry-sm text-telemetry-sm font-semibold">NOMINAL</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs py-space-xs bg-surface-container-lowest/60 rounded px-space-sm">
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-caps text-label-caps uppercase">Shield Shielding</span>
+<span class="text-primary-container font-telemetry-sm text-telemetry-sm font-bold">100% SECURE</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-caps text-label-caps uppercase">Reactor Containment</span>
+<span class="text-primary-container font-telemetry-sm text-telemetry-sm">STABLE (0.003 Δ)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Orbital Platform Controls & Deployment Pod -->
+<div class="bg-surface-container-low rounded-xl p-space-base flex flex-col gap-space-md shadow-md mb-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[20px]">satellite</span>
+<span class="text-on-surface font-headline-sm text-headline-sm">Orbital Platform Controls</span>
+</div>
+<span class="text-on-surface-variant font-telemetry-sm text-telemetry-sm font-medium">SAT-LINK: ACTIVE</span>
+</div>
+<!-- Action Matrix -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Button 1: Veronica Link -->
+<button class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high active:scale-98 transition-all text-left" id="btnVeronica" onclick="toggleProtocol('veronica')">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">lock_open</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-primary font-headline-sm text-body-sm font-semibold truncate">Veronica Protocol</span>
+<span class="text-primary-container font-label-caps text-label-caps truncate" id="veronicaState">STANDBY // READY</span>
+</div>
+</button>
+<!-- Button 2: Sub-Orbital Sweep -->
+<button class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high active:scale-98 transition-all text-left" id="btnSweep" onclick="triggerSweep()">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">track_changes</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-primary font-headline-sm text-body-sm font-semibold truncate">Sub-Orbital Sweep</span>
+<span class="text-on-surface-variant font-label-caps text-label-caps truncate">FULL RADIAL 360°</span>
+</div>
+</button>
+<!-- Button 3: Deploy Recon Drones -->
+<button class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high active:scale-98 transition-all text-left" id="btnDrones" onclick="deployDrones()">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">flight_takeoff</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-primary font-headline-sm text-body-sm font-semibold truncate">Deploy Drones</span>
+<span class="text-on-surface-variant font-label-caps text-label-caps truncate" id="droneCount">4 UNITS DOCKED</span>
+</div>
+</button>
+<!-- Button 4: Atmospheric Thermal -->
+<button class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high active:scale-98 transition-all text-left" id="btnThermal" onclick="toggleThermal()">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">thermostat</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-primary font-headline-sm text-body-sm font-semibold truncate">Thermal Optics</span>
+<span class="text-on-surface-variant font-label-caps text-label-caps truncate" id="thermalState">INFRARED: OFF</span>
+</div>
+</button>
+</div>
+<!-- Real-time HUD Status Terminal Message -->
+<div class="p-space-sm rounded bg-surface-container-lowest flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-primary font-telemetry-sm text-telemetry-sm">
+<span class="material-symbols-outlined text-primary-container text-[16px]">terminal</span>
+<span id="statusConsole">J.A.R.V.I.S.: "All orbital channels clear. Monitoring target vector Alpha."</span>
+</div>
+<span class="w-2 h-3 bg-primary-container animate-pulse shrink-0"></span>
+</div>
+</div>
+</div>
+<!-- Client-side Interactive HUD Logic -->
+<script>
+  function highlightThreat(target) {
+    const consoleMsg = document.getElementById('statusConsole');
+    if (target === 'Alpha') {
+      const card = document.getElementById('cardAlpha');
+      card.classList.add('bg-surface-container-highest');
+      setTimeout(() => card.classList.remove('bg-surface-container-highest'), 1500);
+      consoleMsg.innerText = 'J.A.R.V.I.S.: "Target Alpha supersonic vector locked. Mach 4.2 heading 035 East."';
+    } else if (target === 'Beta') {
+      const card = document.getElementById('cardBeta');
+      card.classList.add('bg-surface-container-highest');
+      setTimeout(() => card.classList.remove('bg-surface-container-highest'), 1500);
+      consoleMsg.innerText = 'J.A.R.V.I.S.: "Seismic tremors verified at 45.1667° N. Analyzing sub-crustal harmonic resonance."';
+    }
+  }
+
+  function engageTarget(target) {
+    const consoleMsg = document.getElementById('statusConsole');
+    consoleMsg.innerText = `J.A.R.V.I.S.: "Initiating tracking lock on Target ${target}. Telemetry streamed to Mk LXXXV HUD."`;
+  }
+
+  function inspectOrbital(platform) {
+    const consoleMsg = document.getElementById('statusConsole');
+    consoleMsg.innerText = `J.A.R.V.I.S.: "${platform} platform in geosynchronous orbit. All secondary repulsor caches armed."`;
+  }
+
+  let veronicaEngaged = false;
+  function toggleProtocol(name) {
+    veronicaEngaged = !veronicaEngaged;
+    const label = document.getElementById('veronicaState');
+    const consoleMsg = document.getElementById('statusConsole');
+    if (veronicaEngaged) {
+      label.innerText = 'ARMED & ENGAGED';
+      label.classList.remove('text-primary-container');
+      label.classList.add('text-error');
+      consoleMsg.innerText = 'J.A.R.V.I.S.: "Veronica protocol active. Atmospheric descent trajectory calculated."';
+    } else {
+      label.innerText = 'STANDBY // READY';
+      label.classList.add('text-primary-container');
+      label.classList.remove('text-error');
+      consoleMsg.innerText = 'J.A.R.V.I.S.: "Veronica protocol restored to orbital standby."';
+    }
+  }
+
+  function triggerSweep() {
+    const radar = document.getElementById('radarSweep');
+    const consoleMsg = document.getElementById('statusConsole');
+    radar.style.animationDuration = '1.2s';
+    consoleMsg.innerText = 'J.A.R.V.I.S.: "Accelerating radial telemetry sweep. Filtering RF backscatter..."';
+    setTimeout(() => {
+      radar.style.animationDuration = '4s';
+      consoleMsg.innerText = 'J.A.R.V.I.S.: "Sweep completed. No new anomalous signatures recorded."';
+    }, 3600);
+  }
+
+  let dronesDeployed = false;
+  function deployDrones() {
+    const droneText = document.getElementById('droneCount');
+    const consoleMsg = document.getElementById('statusConsole');
+    dronesDeployed = !dronesDeployed;
+    if (dronesDeployed) {
+      droneText.innerText = '4 ACTIVE IN AIR';
+      droneText.classList.add('text-primary-container');
+      consoleMsg.innerText = 'J.A.R.V.I.S.: "Stark Recon Drones released. Formations Alpha through Delta deployed."';
+    } else {
+      droneText.innerText = '4 UNITS DOCKED';
+      droneText.classList.remove('text-primary-container');
+      consoleMsg.innerText = 'J.A.R.V.I.S.: "Recon drones returning to sub-orbital bay."';
+    }
+  }
+
+  let thermalActive = false;
+  function toggleThermal() {
+    const thermalText = document.getElementById('thermalState');
+    const consoleMsg = document.getElementById('statusConsole');
+    thermalActive = !thermalActive;
+    if (thermalActive) {
+      thermalText.innerText = 'INFRARED: ACTIVE';
+      thermalText.classList.add('text-tertiary-container');
+      consoleMsg.innerText = 'J.A.R.V.I.S.: "Atmospheric thermal layer rendered. Heat-signature anomalies enhanced."';
+    } else {
+      thermalText.innerText = 'INFRARED: OFF';
+      thermalText.classList.remove('text-tertiary-container');
+      consoleMsg.innerText = 'J.A.R.V.I.S.: "Thermal optics offline. Returning to standard radar band."';
+    }
+  }
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_-1px_16px_rgba(0,240,255,0.08)]" data-active-classes="text-primary-container font-semibold drop-shadow-[0_0_8px_rgba(0,240,255,0.8)]"><div class="flex justify-around items-center h-20 px-space-xs"><a class="flex flex-col items-center justify-center gap-space-xs w-20 h-16 text-on-surface-variant transition-all" data-path="core-ai" href="#"><span class="material-symbols-outlined text-[24px]">neurology</span><span class="font-label-caps text-label-caps uppercase tracking-wider">Core AI</span></a><a class="flex flex-col items-center justify-center gap-space-xs w-20 h-16 text-on-surface-variant transition-all" data-path="diagnostics" href="#"><span class="material-symbols-outlined text-[24px]">shield</span><span class="font-label-caps text-label-caps uppercase tracking-wider">Diagnostics</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-space-xs w-20 h-16 transition-all text-primary-container font-semibold drop-shadow-[0_0_8px_rgba(0,240,255,0.8)]" data-path="telemetry" href="#"><span class="material-symbols-outlined text-[24px]">radar</span><span class="font-label-caps text-label-caps uppercase tracking-wider">Telemetry</span></a><a class="flex flex-col items-center justify-center gap-space-xs w-20 h-16 text-on-surface-variant transition-all" data-path="protocols" href="#"><span class="material-symbols-outlined text-[24px]">vpn_key</span><span class="font-label-caps text-label-caps uppercase tracking-wider">Protocols</span></a></div></nav></body></html>
